@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+<script>
+    "use strict";
+
+    function numSumm(arg1, arg2) {
+        return arg1 + arg2;
+    }
+
+    function numDiff(arg1, arg2) {
+        return arg1 - arg2;
+    }
+
+    function numMult(arg1, arg2) {
+        return arg1 * arg2;
+    }
+
+    function numDiv(arg1, arg2) {
+        return arg1 / arg2;
+    }
+
+    function mathOperation(arg1, arg2, operation) {
+        switch (operation) {
+            case "+":
+                return numSumm(arg1, arg2);
+            case "-":
+                return numDiff(arg1, arg2);
+            case "*":
+                return numMult(arg1, arg2);
+            case "/":
+                return numDiv(arg1, arg2);      
+        }
+    }
+
+    alert("Сумма чисел равен: " + mathOperation(2, 3, "+"));
+    alert("Разность двух чисел равен: " + mathOperation(2, 3, "-"));
+    alert("Произведение двух чиел равен: " + mathOperation(2, 3, "*"));
+    alert("Частное при делении двух чисел равен: " + mathOperation(2, 3, "/"));
+
+</script>   
+</body>
+</html>
