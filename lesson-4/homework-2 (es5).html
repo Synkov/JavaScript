@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        
+        'use script';
+
+        function Post(author, text, date) {
+            this.author = author;
+            this.text = text;
+            this.date = date;
+        }
+
+        Post.prototype.edit = function(text) {
+            this.text = text;
+            alert(this.text);
+        }
+
+        function AttachedPost(author, text, date, highlighted=false) {
+            Post.call(this, author, text, date);
+            this.highlighted = highlighted;
+        }
+
+        AttachedPost.prototype.makeTextHighlighted = function() {
+            this.highlighted = true;
+            alert(this.highlighted);
+        }
+
+        let post1 = new Post('Tolstoi', 'war and peace', 1986)
+        post1.edit('Lion and dog');
+        console.log(post1);
+        let attached1 = new AttachedPost('Pushkin', 'snowstorm', 1830); // можно не указывать highlighted(по умолчанию - false)
+        attached1.makeTextHighlighted();
+        console.log(attached1);
+
+    </script>
+</body>
+</html>
